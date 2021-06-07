@@ -2,6 +2,10 @@ import logo from "./logo.svg";
 import { Form, Card, Image, Icon } from "semantic-ui-react";
 import "./App.css";
 import { useEffect, useState } from "react";
+// require("dotenv").config();
+
+// const { REACT_APP_API_KEY } = process.env;
+// console.log(REACT_APP_API_KEY);
 
 function App() {
   const [name, setUsername] = useState("");
@@ -12,14 +16,12 @@ function App() {
   const [error, setError] = useState(null);
 
   const headers = {
-    access_token: "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",
+    Authorization: `token: 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`,
+    Accept: "application/vnd.github.v3+json",
   };
 
   useEffect(() => {
-    fetch(
-      "https://api.github.com/users/example" +
-        `?access_token=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`
-    )
+    fetch("https://api.github.com/users/example", { headers })
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -39,7 +41,7 @@ function App() {
   const handleSubmit = () => {
     fetch(
       `https://api.github.com/users/${userInput}` +
-        `?access_token=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`
+        `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`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -58,13 +60,12 @@ function App() {
     const sumMap = {};
     const userResponse = await fetch(
       `https://api.github.com/users/${userInput}/repos?per_page=100` +
-        `?access_token=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`
+        `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`
     );
     const userRepos = await userResponse.json();
     for (const repo of userRepos) {
       const rawRepo = await fetch(
-        repo.languages_url +
-          `?access_token=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`
+        repo.languages_url + `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`
       );
       const repoReq = await rawRepo.json();
       Object.keys(repoReq).forEach((language) => {

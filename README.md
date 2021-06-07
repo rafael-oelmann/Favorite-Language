@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Favorite Language
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## find out a Github users favorite programming language
 
-## Available Scripts
+Favorite-Language is a simple React app that allows users to enter an arbitrary Github username, and be presented with a best guess of the Github user's favourite programming language
 
-In the project directory, you can run:
+## Tech
 
-### `yarn start`
+Favorite-Language was built using the following:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [create-react-app] - HTML enhanced for web apps!
+- [Node.js] - JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [npm] - Node package manager.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+1. Clone or fork this repo.
+2. If you do not already have Node, install it from thier homepage.
+3. From the project root directory run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+```
 
-### `yarn build`
+4. Install the dependencies and devDependencies and start the server using:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[npm]: https://www.npmjs.com/
+[node.js]: https://nodejs.org/en/
+[node.js]: http://nodejs.org
+[create-react-app]: https://reactjs.org/docs/create-a-new-react-app.html
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How it should look
 
-### `yarn eject`
+Here is the landing page...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![title](public/homepage.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the search bar enter a github user same, for example, i'll use mine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![title](public/search.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Favorite-Language iterates through all your github repos to provide a total sum of each language used (based on file size)
 
-## Learn More
+## Features I would like to add
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Current the API calls are quite demanding depending on how prolific the Github user is. Having played around with authentication it seems as though I may need to rethink how the app determines the most popular language without having to iterate through users entire profile.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I've just started using React so I'm keen to learn more about how to test in the front end and add it to the project.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Although it's a small app, it could be worth moving the components to separate files as per react conventions.
