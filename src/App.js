@@ -21,7 +21,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://api.github.com/users/example", { headers })
+    fetch("https://api.github.com/users/example", headers)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -39,10 +39,7 @@ function App() {
   };
 
   const handleSubmit = () => {
-    fetch(
-      `https://api.github.com/users/${userInput}` +
-        `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`
-    )
+    fetch(`https://api.github.com/users/${userInput}`, headers)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
@@ -59,14 +56,12 @@ function App() {
     setFavLang("loading...");
     const sumMap = {};
     const userResponse = await fetch(
-      `https://api.github.com/users/${userInput}/repos?per_page=100` +
-        `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`
+      `https://api.github.com/users/${userInput}/repos?per_page=100`,
+      headers
     );
     const userRepos = await userResponse.json();
     for (const repo of userRepos) {
-      const rawRepo = await fetch(
-        repo.languages_url + `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`
-      );
+      const rawRepo = await fetch(repo.languages_url, headers);
       const repoReq = await rawRepo.json();
       Object.keys(repoReq).forEach((language) => {
         if (!!!sumMap[language]) sumMap[language] = 0;
