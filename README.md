@@ -22,7 +22,8 @@ Favorite-Language was built using the following:
 npm install
 ```
 
-4. Install the dependencies and devDependencies and start the server using:
+4. Authorise the app using the guide bellow.
+5. Start the server using:
 
 ```sh
 npm start
@@ -32,6 +33,18 @@ npm start
 [node.js]: https://nodejs.org/en/
 [node.js]: http://nodejs.org
 [create-react-app]: https://reactjs.org/docs/create-a-new-react-app.html
+
+## Authorisation
+
+In order to access more data requests with the Github API you will need to authorise your app with a personal access token.
+
+1. Log on to Github, click on your avatar and go to Settings.
+2. On the left of the page you will need to click on Developer settings
+3. Click on Personal access tokens and then Generate new token (you may be asked to enter your password.
+4. Check the boxes that pertain to repo and user, then copy the key that was generated for you.
+5. In your project root file create a file called .env
+6. In .env paste your access token after REACT_APP_API_KEY=
+7. Refer to .env sample if you need an example of how this looks.
 
 ## How it should look
 
