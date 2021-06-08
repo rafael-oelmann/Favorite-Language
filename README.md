@@ -60,7 +60,7 @@ Favorite-Language iterates through all your github repos to provide a total sum 
 
 ## Features I would like to add
 
-Current the API calls are quite demanding depending on how prolific the Github user is. Having played around with authentication it seems as though I may need to rethink how the app determines the most popular language without having to iterate through users entire profile.
+Currently the API calls are quite demanding depending on how prolific the Github user is. Having played around with authentication it seems as though I may need to rethink how the app determines the most popular language without having to iterate through users entire profile.
 
 I've just started using React so I'm keen to learn more about how to test in the front end and add it to the project.
 
